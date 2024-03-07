@@ -1,9 +1,9 @@
 FROM debian:buster-slim
 
-ENV OCTANT_VERSION=0.5.1
+ENV OCTANT_VERSION=0.25.1
 RUN apt-get update -qq \
     && apt-get install -yqq curl \
-    && curl -L -o "/tmp/octant.deb" "https://github.com/vmware/octant/releases/download/v${OCTANT_VERSION}/octant_${OCTANT_VERSION}_Linux-64bit.deb" \
+    && curl -L -o "/tmp/octant.deb" "https://github.com/vmware-archive/octant/releases/download/v${OCTANT_VERSION}/octant_${OCTANT_VERSION}_Linux-64bit.deb" \
     && dpkg -i "/tmp/octant.deb" \
     && rm -f "/tmp/octant.deb" \
     && apt-get autoremove -y \
